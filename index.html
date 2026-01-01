@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shripad Mahale | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("bg.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+     
+
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #dcdcdc;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: #ffffff;
+      color: #203a43;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      
+    }
+
+    .btn:hover {
+      background: #00c6ff;
+      color: #ffffff;
+      transform: translateY(-3px);
+      
+    }
+
+    /* ================= SECTIONS ================= */
+    section {
+      padding: 100px 10%;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about, .skills, .projects, .contact {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* ================= ABOUT ================= */
+    #about {
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("about-bg.jpg") center/cover no-repeat;
+    }
+
+    /* ================= SKILLS ================= */
+    #skills {
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("skills-bg.jpg") center/cover no-repeat;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .skill-card {
+      background: rgba(255,255,255,0.15);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    /* ================= PROJECTS ================= */
+    #projects {
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("projects-bg.jpg") center/cover no-repeat;
+    }
+
+    .projects .card {
+      background: rgba(255,255,255,0.15);
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    /* ================= CONTACT ================= */
+    #contact {
+      background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url("contact-bg.jpg") center/cover no-repeat;
+    }
+
+    a {
+      color: #00c6ff;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #000;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <h1>Hi, I'm Shripad 👋</h1>
+      <p>IT Student | Developer | Tech Enthusiast</p>
+      <a href="#about" class="btn">Know More</a>
+      <a href="gym.html" class="btn">My Gym Journey 💪</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="about">
+      <h2>About Me</h2>
+      <p>
+        I'm Shripad Mahale, a 3rd-year Information Technology student at Savitribai Phule Pune University.
+        I enjoy building software projects, learning new technologies, and improving my problem-solving skills.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">Java</div>
+        <div class="skill-card">C / C++</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">MySQL</div>
+        <div class="skill-card">HTML & CSS</div>
+        <div class="skill-card">Problem Solving</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="projects">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>Cafe Management System</h3>
+        <p>Mini project using Java, JavaScript, and MySQL for managing orders, billing, and inventory.</p>
+      </div>
+      <div class="card">
+        <h3>Academic Projects</h3>
+        <p>Various assignments and lab projects related to OS, DBMS, ML, and Computer Graphics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:swamimahale0@gmail.com"></i>swamimahale0@gmail.com</a></p>
+      <p>LinkedIn | GitHub </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Shripad Mahale. Built with ❤️</p>
+  </footer>
+
+</body>
+</html>
