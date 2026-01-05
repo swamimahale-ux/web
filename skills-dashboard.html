@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shripad | Skills Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+}
+
+
+
+    header {
+      text-align: center;
+      padding: 80px 10% 40px;
+    }
+
+    header h1 {
+    color: #ff1e1e;
+      font-size: 3rem;
+    }
+
+    header p {
+  color: #555;
+}
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 10%;
+    }
+
+    /* ===== DASHBOARD GRID ===== */
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 35px;
+      justify-items: center;
+    }
+
+    /* ===== CIRCLE CARD ===== */
+    .circle-card {
+  background: #0e0e0e;
+  border-radius: 25px;
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 240px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(255,0,0,0.15);
+}
+
+
+
+    circle-card h3 {
+  color: #111;
+}
+
+    /* ===== CIRCULAR PROGRESS ===== */
+    .circle {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: auto;
+    }
+
+    svg {
+      width: 140px;
+      height: 140px;
+      transform: rotate(-90deg);
+    }
+
+    circle {
+      fill: none;
+      stroke-width: 12;
+      stroke-linecap: round;
+    }
+
+    .bg {
+  stroke: #222222;      /* dark grey background ring */
+}
+
+.progress {
+  stroke: #ff1e1e;      /* 🔴 RED progress ring */
+}
+
+
+    @keyframes fill {
+      to {
+        stroke-dashoffset: var(--offset);
+      }
+    }
+
+    .percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .percentage {
+  color: #ff1e1e;       /* 🔴 RED percentage */
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+    /* ===== BACK BUTTON ===== */
+    .center {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 14px 34px;
+      background: white;
+      color: black;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #00c6ff;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Skills Dashboard</h1>
+    <p>My technical skill set at a glance</p>
+  </header>
+
+  <section>
+    <div class="dashboard">
+
+      <!-- JAVA -->
+      <div class="circle-card">
+        <div class="circle">
+          <svg>
+            <defs>
+              <linearGradient id="gradient">
+                <stop offset="0%" stop-color="#00c6ff"/>
+                <stop offset="100%" stop-color="#0072ff"/>
+              </linearGradient>
+            </defs>
+            <circle class="bg" cx="70" cy="70" r="62"/>
+            <circle class="progress" cx="70" cy="70" r="62"
+              style="--offset:88"/>
+          </svg>
+          <div class="percentage">80%</div>
+        </div>
+        <h3>Java</h3>
+      </div>
+
+      <!-- MongoDB -->
+<div class="circle-card">
+  <div class="circle">
+    <svg>
+      <circle class="bg" cx="70" cy="70" r="62"/>
+      <circle class="progress" cx="70" cy="70" r="62"
+        style="--offset:88"/>
+    </svg>
+    <div class="percentage">80%</div>
+  </div>
+  <h3>MongoDB</h3>
+</div>
+
+    <!-- Machine Learning -->
+<div class="circle-card">
+  <div class="circle">
+    <svg>
+      <circle class="bg" cx="70" cy="70" r="62"/>
+      <circle class="progress" cx="70" cy="70" r="62"
+        style="--offset:66"/>
+    </svg>
+    <div class="percentage">85%</div>
+  </div>
+  <h3>Machine Learning</h3>
+</div>
+
+
+      <!-- JAVASCRIPT -->
+      <div class="circle-card">
+        <div class="circle">
+          <svg>
+            <circle class="bg" cx="70" cy="70" r="62"/>
+            <circle class="progress" cx="70" cy="70" r="62"
+              style="--offset:110"/>
+          </svg>
+          <div class="percentage">75%</div>
+        </div>
+        <h3>JavaScript</h3>
+      </div>
+
+      <!-- HTML & CSS -->
+      <div class="circle-card">
+        <div class="circle">
+          <svg>
+            <circle class="bg" cx="70" cy="70" r="62"/>
+            <circle class="progress" cx="70" cy="70" r="62"
+              style="--offset:66"/>
+          </svg>
+          <div class="percentage">85%</div>
+        </div>
+        <h3>HTML & CSS</h3>
+      </div>
+
+      <!-- MYSQL -->
+      <div class="circle-card">
+        <div class="circle">
+          <svg>
+            <circle class="bg" cx="70" cy="70" r="62"/>
+            <circle class="progress" cx="70" cy="70" r="62"
+              style="--offset:132"/>
+          </svg>
+          <div class="percentage">70%</div>
+        </div>
+        <h3>MySQL</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="center">
+    <a href="index.html" class="back-btn">⬅ Back to Portfolio</a>
+  </div>
+
+</body>
+</html>
