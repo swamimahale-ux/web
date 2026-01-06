@@ -13,7 +13,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+     
     body {
       font-family: 'Poppins', sans-serif;
       color: white;
@@ -33,7 +33,6 @@
      
 
     }
-
     header h1 {
       font-size: 3rem;
       font-weight: 700;
@@ -85,14 +84,14 @@
     #about {
       background:
         linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-        url("about-bg.JPG") center/cover no-repeat;
+        url("about-bg.jpg") center/cover no-repeat;
     }
 
     /* ================= SKILLS ================= */
     #skills {
       background:
         linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-        url("skills-bg.JPG") center/cover no-repeat;
+        url("skills-bg.jpg") center/cover no-repeat;
     }
 
     .skills-grid {
@@ -114,7 +113,7 @@
     #projects {
       background:
         linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-        url("projects-bg.JPG") center/cover no-repeat;
+        url("projects-bg.jpg") center/cover no-repeat;
     }
 
     .projects .card {
@@ -128,7 +127,7 @@
     #contact {
       background:
         linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-        url("contact-bg.JPG") center/cover no-repeat;
+        url("contact-bg.jpg") center/cover no-repeat;
     }
 
     a {
@@ -142,20 +141,94 @@
       background: #000;
       font-size: 0.9rem;
     }
+    /* ===== Instagram-style Profile Picture ===== */
+.pfp-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.pfp {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow:
+    0 0 0 6px rgba(255,255,255,0.15),
+    0 15px 35px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.pfp:hover {
+  transform: scale(1.05);
+}
+/* ===== PFP LIGHTBOX ===== */
+#pfp-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#pfp-lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+.project-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 22px;
+  background: #ffffff;
+  color: #203a43;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #00c6ff;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+
   </style>
 </head>
 
 <body>
 
   <header>
-    <div>
-      <h1>Hi, I'm Shripad 👋</h1>
-      <p>IT Student | Developer | Tech Enthusiast</p>
+  <div class="hero">
+
+    <div class="pfp-wrapper">
+      <img src="pfp.jpg" alt="Profile Picture" class="pfp" onclick="openPfp()">
+    </div>
+
+    <h1>Hi, I'm Shripad 👋</h1>
+
+    <p class="subtitle">
+      IT Student | Developer | Tech Enthusiast
+    </p>
+
+    <div class="hero-buttons">
       <a href="#about" class="btn">Know More</a>
       <a href="gym.html" class="btn">My Gym Journey 💪</a>
       <a href="skills-dashboard.html" class="btn">Skills Dashboard 📊</a>
     </div>
-  </header>
+
+  </div>
+</header>
 
   <section id="about">
     <div class="about">
@@ -182,18 +255,51 @@
   </section>
 
   <section id="projects">
-    <div class="projects">
-      <h2>Projects</h2>
-      <div class="card">
-        <h3>Cafe Management System</h3>
-        <p>Mini project using Java, JavaScript, and MySQL for managing orders, billing, and inventory.</p>
-      </div>
-      <div class="card">
-        <h3>Academic Projects</h3>
-        <p>Various assignments and lab projects related to OS, DBMS, ML, and Computer Graphics.</p>
-      </div>
+  <div class="projects">
+    <h2>Projects</h2>
+
+    <!-- Project 1 -->
+    <div class="card">
+      <h3>Calculator Web App</h3>
+      <p>
+        A responsive and user-friendly calculator built using HTML, CSS, and JavaScript.
+        It supports basic arithmetic operations with a clean UI and smooth interactions.
+      </p>
+      <p><b>Tech Stack:</b> HTML, CSS, JavaScript</p>
+      <a href="https://swamimahale-ux.github.io/Calculator/" target="_blank" class="project-btn">
+        Live Demo →
+      </a>
     </div>
-  </section>
+
+    <!-- Project 2 -->
+    <div class="card">
+      <h3>Formula 1 Informational Website</h3>
+      <p>
+        A visually rich website showcasing Formula 1 teams, drivers, and race details.
+        Designed with a focus on layout, aesthetics, and user experience.
+      </p>
+      <p><b>Tech Stack:</b> HTML, CSS, JavaScript</p>
+      <a href="https://swamimahale-ux.github.io/F1-Website/" target="_blank" class="project-btn">
+        Live Demo →
+      </a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="card">
+      <h3>Calorie Tracker Web App</h3>
+      <p>
+        A simple calorie tracking application that allows users to log food intake
+        and monitor daily calorie consumption. Focused on usability and clean design.
+      </p>
+      <p><b>Tech Stack:</b> HTML, CSS, JavaScript</p>
+      <a href="https://swamimahale-ux.github.io/calories/" target="_blank" class="project-btn">
+        Live Demo →
+      </a>
+    </div>
+
+  </div>
+</section>
+
 
   <section id="contact">
     <div class="contact">
@@ -207,6 +313,30 @@
   <footer>
     <p>© 2025 Shripad Mahale. Built with ❤️</p>
   </footer>
+  <!-- Profile Picture Lightbox -->
+<div id="pfp-lightbox" onclick="closePfp()">
+  <img src="pfp.jpg" alt="Full Profile Picture">
+</div>
+<script>
+  window.onload = function () {
+    window.scrollTo(0, 0);
+  };
+  function openPfp() {
+    document.getElementById("pfp-lightbox").style.display = "flex";
+  }
+
+  function closePfp() {
+    document.getElementById("pfp-lightbox").style.display = "none";
+  }
+
+  // Close on ESC key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closePfp();
+    }
+  });
+</script>
+
 
 </body>
 </html>
