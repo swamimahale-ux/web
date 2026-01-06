@@ -20,10 +20,7 @@
   background: #000000;
   color: #ffffff;
 }
-
-
-
-    header {
+  header {
       text-align: center;
       padding: 80px 10% 40px;
     }
@@ -89,13 +86,18 @@
     }
 
     .bg {
-  stroke: #222222;      /* dark grey background ring */
+  stroke: #1f1f1f;      /* dark grey ring */
 }
 
 .progress {
-  stroke: #ff1e1e;      /* 🔴 RED progress ring */
+  fill: none;
+  stroke: #00c6ff;      /* RED */
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-dasharray: 389;
+  stroke-dashoffset: 389;
+  transition: stroke-dashoffset 1.2s ease;
 }
-
 
     @keyframes fill {
       to {
@@ -112,10 +114,11 @@
       font-weight: 600;
     }
     .percentage {
-  color: #ff1e1e;       /* 🔴 RED percentage */
+  color: #00c6ff;       /* 🔵 BLUE percentage */
   font-size: 1.5rem;
   font-weight: 700;
 }
+
 
     /* ===== BACK BUTTON ===== */
     .center {
@@ -162,8 +165,8 @@
               </linearGradient>
             </defs>
             <circle class="bg" cx="70" cy="70" r="62"/>
-            <circle class="progress" cx="70" cy="70" r="62"
-              style="--offset:88"/>
+            <circle class="progress" cx="70" cy="70" r="62" data-percent="80"/>
+
           </svg>
           <div class="percentage">80%</div>
         </div>
@@ -175,8 +178,7 @@
   <div class="circle">
     <svg>
       <circle class="bg" cx="70" cy="70" r="62"/>
-      <circle class="progress" cx="70" cy="70" r="62"
-        style="--offset:88"/>
+      <circle class="progress" cx="70" cy="70" r="62" data-percent="80"/>
     </svg>
     <div class="percentage">80%</div>
   </div>
@@ -188,8 +190,7 @@
   <div class="circle">
     <svg>
       <circle class="bg" cx="70" cy="70" r="62"/>
-      <circle class="progress" cx="70" cy="70" r="62"
-        style="--offset:66"/>
+      <circle class="progress" cx="70" cy="70" r="62" data-percent="85"/>
     </svg>
     <div class="percentage">85%</div>
   </div>
@@ -197,44 +198,42 @@
 </div>
 
 
+
       <!-- JAVASCRIPT -->
       <div class="circle-card">
-        <div class="circle">
-          <svg>
-            <circle class="bg" cx="70" cy="70" r="62"/>
-            <circle class="progress" cx="70" cy="70" r="62"
-              style="--offset:110"/>
-          </svg>
-          <div class="percentage">75%</div>
-        </div>
-        <h3>JavaScript</h3>
-      </div>
+  <div class="circle">
+    <svg>
+      <circle class="bg" cx="70" cy="70" r="62"/>
+      <circle class="progress" cx="70" cy="70" r="62" data-percent="75"/>
+    </svg>
+    <div class="percentage">75%</div>
+  </div>
+  <h3>JavaScript</h3>
+</div>
 
       <!-- HTML & CSS -->
       <div class="circle-card">
-        <div class="circle">
-          <svg>
-            <circle class="bg" cx="70" cy="70" r="62"/>
-            <circle class="progress" cx="70" cy="70" r="62"
-              style="--offset:66"/>
-          </svg>
-          <div class="percentage">85%</div>
-        </div>
-        <h3>HTML & CSS</h3>
-      </div>
+  <div class="circle">
+    <svg>
+      <circle class="bg" cx="70" cy="70" r="62"/>
+      <circle class="progress" cx="70" cy="70" r="62" data-percent="85"/>
+    </svg>
+    <div class="percentage">85%</div>
+  </div>
+  <h3>HTML & CSS</h3>
+</div>
 
       <!-- MYSQL -->
       <div class="circle-card">
-        <div class="circle">
-          <svg>
-            <circle class="bg" cx="70" cy="70" r="62"/>
-            <circle class="progress" cx="70" cy="70" r="62"
-              style="--offset:132"/>
-          </svg>
-          <div class="percentage">70%</div>
-        </div>
-        <h3>MySQL</h3>
-      </div>
+  <div class="circle">
+    <svg>
+      <circle class="bg" cx="70" cy="70" r="62"/>
+      <circle class="progress" cx="70" cy="70" r="62" data-percent="70"/>
+    </svg>
+    <div class="percentage">70%</div>
+  </div>
+  <h3>MySQL</h3>
+</div>
 
     </div>
   </section>
@@ -242,6 +241,17 @@
   <div class="center">
     <a href="index.html" class="back-btn">⬅ Back to Portfolio</a>
   </div>
+<script>
+  document.querySelectorAll(".progress").forEach(circle => {
+    const percent = circle.getAttribute("data-percent");
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    circle.style.strokeDasharray = circumference;
+    circle.style.strokeDashoffset =
+      circumference * (1 - percent / 100);
+  });
+</script>
 
 </body>
 </html>
